@@ -6,17 +6,17 @@
         X
         </div>
 
-        <div v-if="product" class="product-details">
-            <img v-bind:src=" product.img "> 
-            <h5 class="card-title">{{ product.name }}</h5>
-            <h5 class="card-author">{{product.author}}</h5>
-            <h5 class="card-price">{{ product.price}}</h5>
+        <div v-for="book in Books" :key="book._id" class="product-details">
+            <!-- <img v-bind:src=" product.img ">  -->
+            <h5 class="card-title">{{ book.name }}</h5>
+            <h5 class="card-author">{{book.author}}</h5>
+            <h5 class="card-price">{{ book.price}}</h5>
      
-        <p class="description">{{ product.description }}</p>
-        <h3 class="text-center">{{ product.price.toFixed(2) }}</h3>
-        <div class="cart-total" v-if="product_total">
+        <p class="description">{{ book.description }}</p>
+        <h3 class="text-center">{{ book.price.toFixed(2) }}</h3>
+        <div class="cart-total" v-if="book_total">
             <h3>In Cart</h3>
-            <h4>{{ product_total }}</h4>
+            <h4>{{ book_total }}</h4>
         </div>
 
         <div class="button-container">
@@ -29,14 +29,52 @@
 </template>
 
 <script>
-export default{
+ 
+ import axios from "axios"; 
+export default {
+     
     props:['product','active'],
     computed:{
-        product_total(){
+        book_total(){
             return 56.00
         }
-    }
-}
+    },
+    data() {
+      return {
+        Books: [],
+      };
+    },  
+  
+    created() {
+      let apiURL = "http://localhost:4000/api";
+      axios
+        .get(apiURL)
+        .then((res) => {
+          this.Books = res.data;
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    },
+    methods: {
+      deleteBook(id) {
+        let apiURL = `http://localhost:4000/api/delete-book/${id}`;
+        let indexOfArrayItem = this.Books.findIndex((i) => i._id === id);
+  
+        if (window.confirm("Do you really want to delete?")) {
+          axios
+            .delete(apiURL)
+            .then(() => {
+              this.Books.splice(indexOfArrayItem, 1);
+            })
+            .catch((error) => {
+              console.log(error);
+            });
+        }
+      },
+      
+    },
+  };
 </script>
 
 <style lang="scss">
