@@ -1,7 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
-import CartView from '../views/CartView.vue'
 import ShopView from '../views/ShopView.vue'
+
 
 const routes = [
   {
@@ -10,14 +10,24 @@ const routes = [
     component: HomeView
   },
   {
-    path: '/cart',
-    name: 'Cart',
-    component: CartView
-  },
-  {
     path: '/shop',
     name: 'Shop',
     component: ShopView
+  }, 
+  {
+    path: '/create',
+    name: 'create',
+    component: () => import('../components/CreateComponent'),
+  },
+  {
+    path: '/view',
+    name: 'view',
+    component: () => import('../components/ListComponent'),
+  },
+  {
+    path: '/edit/:id',
+    name: 'edit',
+    component: () => import('../components/EditComponent'),
   },
 ]
 
@@ -29,3 +39,4 @@ const router = createRouter({
 })
 
 export default router
+
