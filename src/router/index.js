@@ -20,14 +20,24 @@ const routes = [
     component: () => import('../components/CreateComponent'),
   },
   {
-    path: '/view',
-    name: 'view',
+    path: '/list',
+    name: 'list',
     component: () => import('../components/ListComponent'),
   },
   {
     path: '/edit/:id',
     name: 'edit',
     component: () => import('../components/EditComponent'),
+  },
+  {
+    path: '/listContacts',
+    name: 'listContacts',
+    component: () => import('../components/ListContactComponent'),
+  },
+  {
+    path: '/createContacts',
+    name: 'createContacts',
+    component: () => import('../components/CreateContactComponent'),
   },
 ]
 
@@ -39,4 +49,3 @@ const router = createRouter({
 })
 
 export default router
-
