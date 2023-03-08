@@ -1,14 +1,11 @@
- <template>
+<template>
     <div class="home">
-        
-        <ProductDescriptionDrawer
-        :book = "book"
+      <ProductDescriptionDrawer 
+        :product= "book"
         :active = "active.product_drawer"
         v-on:close-product-drawer="closeProductDrawer" />
         <div class="product-cards-container">
             <ProductSummaryCard 
-             v-for="book in Books"
-             :key="book._id"
              :product="book"
              v-on:view-product="viewProduct($event)"/>
         </div>
@@ -19,6 +16,7 @@
 import axios from "axios"; 
 import ProductSummaryCard from '../components/products/ProductSummaryCard.vue'
 import ProductDescriptionDrawer from '../components/products/ProductDescriptionDrawer.vue'
+
 // export default{ 
 //     name:'Shop',
 //     components:{
@@ -47,7 +45,11 @@ import ProductDescriptionDrawer from '../components/products/ProductDescriptionD
 //         }
     
 //     }
-// }
+// }  
+
+
+
+
 export default {
     name:'Shop',
     components:{
@@ -103,7 +105,7 @@ export default {
         }
       
     },
-  };
+};
 
 </script>
 
