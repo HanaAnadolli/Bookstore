@@ -1,7 +1,7 @@
 <template>
-    <div class="card">
+    <div class="card" v-for="book in Books" :key="book._id">
         <!-- <img class="card-img-top" v-bind:src=" product.img ">   -->
-        <div class="card-body" v-for="book in Books" :key="book._id">
+        <div  class="card-body" >
             
             <h5 class="card-title">{{ book.name }}</h5>
             <h5 class="card-author">{{book.author}}</h5>
