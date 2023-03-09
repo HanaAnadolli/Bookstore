@@ -33,6 +33,8 @@
             {path:'/info' , name: 'Information'},
             {path:'/createContacts' , name: 'Contact us'},
             {path:'login' , name: 'Login'}
+            
+
         ]
       };
     },
@@ -48,4 +50,3 @@
         height: 100px ;
     }
 </style>
-  
