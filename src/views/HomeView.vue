@@ -54,5 +54,22 @@ export default {
       object-fit: cover;
     }
   }
+  @media (max-width: 768px) {
+    height: 60vh;
+    .slide-info {
+      img {
+        min-height: 100%;
+      }
+    }
+  }
+
+  @media (max-width: 576px) {
+    height: 50vh;
+    .slide-info {
+      img {
+        min-height: 100%;
+      }
+    }
+  }
 }
 </style>
