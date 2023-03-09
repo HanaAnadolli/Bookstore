@@ -14,6 +14,8 @@ mongoose
   })
 
 
+
+  const favoritebookAPI = require('./routes/favoritebook.route')
   const bookAPI = require('./routes/book.route')
   const contactAPI = require('./routes/contact.route')
   
@@ -27,6 +29,7 @@ mongoose
   app.use(cors())
   
   // API
+  app.use('/apiF', favoritebookAPI)
   app.use('/api', bookAPI)
   app.use('/apiC', contactAPI)
   
