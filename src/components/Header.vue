@@ -31,7 +31,7 @@
             {path:'/' , name: 'Home'},
             {path:'/shop' , name: 'Shop'},
             {path:'/info' , name: 'Information'},
-            {path:'/contact' , name: 'Contact us'},
+            {path:'/createContacts' , name: 'Contact us'},
             {path:'login' , name: 'Login'}
         ]
       };
