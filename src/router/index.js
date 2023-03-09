@@ -1,6 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
-import ShopView from '../views/ShopView.vue'
+
+import AboutUs from '../views/AboutUs.vue'
 
 
 const routes = [
@@ -10,15 +11,30 @@ const routes = [
     component: HomeView
   },
   {
-    path: '/shop',
-    name: 'Shop',
-    component: ShopView
+    path: '/',
+    name: 'home',
+    component: HomeView
+  },
+  {
+    path: '/info',
+    name: 'info',
+    component: AboutUs
+
   }, 
+
+  {
+    path: '/listFavorite',
+    name: 'listFavorite',
+    component: () => import('../components/ListFavoriteBookComponent'),
+  },
+ 
   {
     path: '/create',
     name: 'create',
     component: () => import('../components/CreateComponent'),
   },
+
+
   {
     path: '/list',
     name: 'list',
