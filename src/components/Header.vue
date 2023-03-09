@@ -1,65 +1,51 @@
 <template>
-    <header class="head">
-        <h1 class="head__title">{{title}}</h1>
-        <ul class="nav_list">
-            <li 
+    <nav class="navbar navbar-expand-lg">
+      <div class="container-fluid">
+        <b-navbar-brand>
+            <router-link to="/">
+                <img src="@/assets/logo.png" class="logo" alt="Logo">
+            </router-link>
+        </b-navbar-brand>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="!isCollapsed" aria-label="Toggle navigation" @click="isCollapsed = !isCollapsed">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" :class="{ 'show': !isCollapsed }">
+          <ul class="navbar-nav">
+            <li class="nav-item"
                 v-for="item in menuItems"
                 v-bind:key="item.path"
-            ><router-link  v-bind:to="item.path">{{ item.name }}</router-link></li>
+            ><router-link class="nav-link" v-bind:to="item.path">{{ item.name }}</router-link></li>
         </ul>
-    </header>
-</template>
+        </div>
+      </div>
+    </nav>
+  </template>
+  
+  <script>
+  export default {
+    name: "Navbar",
+    data() {
+      return {
+        isCollapsed: true,
+        menuItems:[
+            {path:'/' , name: 'Home'},
+            {path:'/shop' , name: 'Shop'},
+            {path:'/info' , name: 'Information'},
+            {path:'/contact' , name: 'Contact us'},
+            {path:'login' , name: 'Login'}
+        ]
+      };
+    },
+  };
+  </script>
 
-<script>
-    export default {
-        data(){
-            return{
-                title: 'BOOKSTORE',
-                menuItems:[
-                    {path:'/' , name: 'Home'},
-                    {path:'/shop' , name: 'Shop'},
-                    {path:'/createContacts' , name: 'Contact us'},
-                    {path:'login' , name: 'Login'}
-                ],
-            }
-        }
+<style>
+    .navbar{
+        background-color: #eee6de;
     }
-</script>
-
-<style scoped> /*perdoret scoped kur don veq per qat faqe style me lon*/ 
-    .head{
-        background-color: #d5d5d5;
-        padding: 2rem;
-        margin: -0.5rem;
-        display: flex;
-        align-items: flex-end;
-        gap: 3rem;
-    }
-    .head__title{
-        font-size: 2.5rem;
-        color: #6d7993;
-        font-family: Calligraphic sans-serif;
-        margin: 0.5rem;
-    }
-    .nav_list{
-        list-style-type: none;
-        display: flex;
-        gap: 1rem;
-        color:#6d7993;
-    }
-
-    .nav_list li {
-        transition: all .2s ease-out;
-    }
-
-    .nav_list li:hover{
-        color: white;
-    }
-
-    a:link,
-    a:visited{
-        text-decoration: none;
-        color: rgb(63, 63, 63);
-        font-weight: 600;
+    .logo{
+        width: 300px;
+        height: 100px ;
     }
 </style>
+  
