@@ -28,7 +28,6 @@ export default {
   components:{
     Carousel,
     Slide,
-    HeaderVue,
     Footer
   },
   setup() {
