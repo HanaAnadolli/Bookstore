@@ -1,4 +1,5 @@
 <template>
+  <Header />
     <div class="home">
       <ProductDescriptionDrawer 
         :product= "book"
@@ -10,9 +11,12 @@
              v-on:view-product="viewProduct($event)"/>
         </div>
     </div>
+    <Footer />
 </template>
 
 <script>
+import Header from "@/components/Header.vue";
+import Footer from "@/components/Footer.vue";
 import axios from "axios"; 
 import ProductSummaryCard from '../components/products/ProductSummaryCard.vue'
 import ProductDescriptionDrawer from '../components/products/ProductDescriptionDrawer.vue'
@@ -54,7 +58,9 @@ export default {
     name:'Shop',
     components:{
         ProductSummaryCard,
-        ProductDescriptionDrawer
+        ProductDescriptionDrawer,
+        Header,
+        Footer
    },
    data(){
       return {
