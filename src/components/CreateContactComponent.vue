@@ -1,4 +1,5 @@
 <template>
+  <Header />
    <div class="container">
     <div class="content">
       
@@ -62,10 +63,13 @@
     </div>
     </div>
   </div>
+  <FooterVue/>
   </template>
   
   <script>
   import axios from "axios";
+  import Header from "./Header.vue";
+  import FooterVue from "./Footer.vue";
   
   export default {
     data() {
@@ -77,6 +81,10 @@
             description:""
         },
       };
+    },
+    components:{
+      Header,
+      FooterVue
     },
     methods: {
       handleSubmitForm() {
@@ -104,7 +112,7 @@
 
 .container{
   width: 85%;
-  background: #fff;
+  background: #eee;
   border-radius: 6px;
   padding: 20px 60px 30px 40px;
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
@@ -142,7 +150,7 @@
 }
 .content .left-side .details i{
   font-size: 30px;
-  color: #3e2093;
+  color: #B6594c;
   margin-bottom: 10px;
 }
 .content .left-side .details .topic{
@@ -152,7 +160,8 @@
 .content .left-side .details .text-one,
 .content .left-side .details .text-two{
   font-size: 14px;
-  color: #afafb6;
+  color: #B6594c;
+
 }
 .container .content .right-side{
   width: 75%;
