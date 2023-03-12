@@ -1,18 +1,19 @@
 <template>
-  <Header />
   <v-container fluid class="grey lighten-5">
     <router-view />
   </v-container>
 </template>
 
 <script>
-import Header from './components/Header.vue'
+import { getAuth, onAuthStateChanged } from '@firebase/auth';
 
 
 export default ({
-  components: {
-    Header,
-    
+  mounted() {
+    const auth = getAuth();
+    onAuthStateChanged(auth, (user) => {
+        this.$store.commit('setUser', user); 
+    })
   }
 })
 </script>
@@ -41,7 +42,4 @@ nav a {
   color: #2c3e50;
 }
 
-nav a.router-link-exact-active {
-  color: #42b983;
-}
 </style>
