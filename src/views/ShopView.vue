@@ -1,5 +1,4 @@
 <template>
-  <Header />
     <div class="home">
       <ProductDescriptionDrawer 
         :product= "book"
@@ -15,7 +14,6 @@
 </template>
 
 <script>
-import Header from "@/components/Header.vue";
 import Footer from "@/components/Footer.vue";
 import axios from "axios"; 
 import ProductSummaryCard from '../components/products/ProductSummaryCard.vue'
