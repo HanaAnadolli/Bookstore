@@ -1,5 +1,4 @@
 <template>
-  <HeaderVue />
   <div class="home">
     <Carousel
       :navigation="true"
@@ -23,7 +22,6 @@
 // @ is an alias to /src
 import Carousel from '@/components/Carousel.vue';
 import Slide from '@/components/Slide.vue';
-import HeaderVue from '@/components/Header.vue';
 import Footer from '@/components/Footer.vue';
 export default {
   name: 'HomeView',
