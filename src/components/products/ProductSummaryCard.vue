@@ -1,6 +1,7 @@
 <template>
+  
     <div class="card" v-for="book in Books" :key="book._id">
-        <!-- <img class="card-img-top" v-bind:src=" product.img ">   -->
+      <img class="card-img-top" src="../../assets/logo.png">  
         <div  class="card-body" >
             
             <h5 class="card-title">{{ book.name }}</h5>
@@ -64,14 +65,14 @@
         padding: 10px;
         border-radius: 5px;
         background-color: white;
-        box-shadow: 0 0 5px #9099A2;
+        box-shadow: 0 0 5px #B6594c;
         text-align: left;
         .card-title{
             font-weight: bolder;
         }
         .card-author{
             font-weight: bold;
-            color: #9099A2;
+            color: #B6594c;
         }
         .card-price{
             font-weight: bolder;
@@ -91,7 +92,7 @@
 
         button.view-product-button{
             padding: 10px;
-            background-color: #9099A2;
+            background-color: #B6594c;
             border: none;
             color: white;
             font-weight: bold;
