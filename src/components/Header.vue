@@ -40,6 +40,7 @@ import { getAuth, signOut } from '@firebase/auth';
         menuItems:[
             {path:'/' , name: 'Home'},
             {path:'/shop' , name: 'Shop'},
+              {path:'/blog' , name: 'Blog'},
             {path:'/info' , name: 'Information'},
             {path:'/createContacts' , name: 'Contact us'}
         ]
