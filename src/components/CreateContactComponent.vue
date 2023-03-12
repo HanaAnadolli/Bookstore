@@ -1,5 +1,4 @@
 <template>
-  <Header />
    <div class="container">
     <div class="content">
       
@@ -68,7 +67,6 @@
   
   <script>
   import axios from "axios";
-  import Header from "./Header.vue";
   import FooterVue from "./Footer.vue";
   
   export default {
@@ -83,7 +81,6 @@
       };
     },
     components:{
-      Header,
       FooterVue
     },
     methods: {
