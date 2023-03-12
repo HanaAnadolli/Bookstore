@@ -57,7 +57,6 @@ export default {
     components:{
         ProductSummaryCard,
         ProductDescriptionDrawer,
-        Header,
         Footer
    },
    data(){
