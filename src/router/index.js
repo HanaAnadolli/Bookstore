@@ -3,6 +3,8 @@ import HomeView from '../views/HomeView.vue'
 import ShopView from '../views/ShopView.vue'
 import LogIn from '../views/User/Login.vue'
 import SignUp from '../views/User/Signup.vue'
+import Blog from '../views/Blog.vue'
+
 import Dashboard from '../views/Dashboard.vue'
 import { getAuth, onAuthStateChanged } from 'firebase/auth';
 
@@ -13,6 +15,17 @@ const routes = [
     name: 'home',
     component: HomeView
   },
+  
+  {
+    path: '/blog',
+    name: 'Blog',
+    component: Blog
+  },
+
+  
+  
+  
+  
   {
     path: '/shop',
     name: 'Shop',
