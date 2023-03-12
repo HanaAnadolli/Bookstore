@@ -84,7 +84,7 @@ export default {
     position: fixed;
     left: 0;
     top: 0;
-    background-color: #9099A2;
+    background-color: #B6594c;
     z-index: 100;
     display: none;
     transition: display 0.5s;
@@ -123,7 +123,7 @@ export default {
 
 
     &:hover{
-        background-color: #9099A2;
+        background-color: #B6594c;
     }
 }
 .product-details{
@@ -140,7 +140,7 @@ export default {
         }
         .card-author{
             font-weight: bold;
-            color: #9099A2;
+            color:#B6594c;
         }
         .card-price{
             font-weight: bolder;
@@ -164,3 +164,4 @@ export default {
     }
 }
 </style>
+
