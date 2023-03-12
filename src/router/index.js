@@ -7,6 +7,7 @@ import Blog from '../views/Blog.vue'
 
 import Dashboard from '../views/Dashboard.vue'
 import { getAuth, onAuthStateChanged } from 'firebase/auth';
+import AboutUsVue from '@/views/AboutUs.vue'
 
 
 const routes = [
@@ -20,6 +21,10 @@ const routes = [
     path: '/blog',
     name: 'Blog',
     component: Blog
+  }, {
+    path: '/info',
+    name: 'Info',
+    component: AboutUsVue
   },
 
   
@@ -98,3 +103,4 @@ router.beforeEach((to, from, next) => {
 });
 
 export default router
+
