@@ -1,6 +1,5 @@
-
 <template>
-   <header id="header" class="header">
+	<Header />
      <div class="container">
          <div class="row">
             <div class="col-lg-6 col-xl-5">
@@ -17,7 +16,6 @@
              </div> 
          </div> 
      </div> 
-   </header> 
 
    <div id="services" class="cards-1 bg-gray">
      <div class="container">
@@ -195,40 +193,28 @@
          </div>
      </div> 
    </div>
-   
-   <div class="copyright bg-gray">
-     <div class="container">
-         <div class="row">
-             <div class="col-lg-6 col-md-12 col-sm-12">
-                 <ul class="list-unstyled li-space-lg p-small">
-                     <li><a href="#">Article Details</a></li>
-                     <li><a href="#">Terms & Conditions</a></li>
-                     <li><a href="#">Privacy Policy</a></li>
-                 </ul>
-             </div> 
-             <div class="col-lg-3 col-md-12 col-sm-12">
-                 <p class="p-small statement">Copyright © <a href="#">Masuk Mia </a></p>
-             </div> 
-             <div class="col-lg-3 col-md-12 col-sm-12">
-                 <p class="p-small statement">Distributed by <a href="https://masukmia.com" target="_blank">Masuk Mia </a></p>
-             </div> 
-         </div> 
-     </div> 
-   </div>
+
+   <Footer />
    </template>
 
 <script>
 import axios from "axios";
+import Header from "@/components/Header.vue";
+import Footer from '@/components/Footer.vue'
 
 export default {
+	components:{
+		Header,
+		Footer
+	},
   data() {
     return {
-      favoritebook: {
-        name: "",
-        email: "",
-        book: "",
-        description: ""
-      },
+		favoritebook: {
+			name: "",
+			email: "",
+			book: "",
+			description: ""
+		},
     };
   },
   methods: {
@@ -553,129 +539,6 @@ a:hover {
 	border: 1px solid #B6594C;
 	background-color: transparent;
 	color:#B6594C;
-}
-
-
-/**********************/
-/*     Navigation     */
-/**********************/
-.navbar {
-	background-color: #fcfafb;
-	font-weight: 600;
-	font-size: 0.875rem;
-	line-height: 0.875rem;
-	box-shadow: 0 1px 6px 0 rgba(0, 0, 0, 0.05);
-}
-
-.navbar .navbar-brand {
-	padding-top: 0.25rem;
-	padding-bottom: 0.25rem;
-}
-
-.navbar .logo-image img {
-    width: 126px;
-	height: 32px;
-}
-
-.navbar .logo-text {
-	color: #223150;
-	font-weight: 700;
-	font-size: 1.875rem;
-	line-height: 1rem;
-	text-decoration: none;
-}
-
-.offcanvas-collapse {
-	position: fixed;
-	top: 3.25rem; /* adjusts the height between the top of the page and the offcanvas menu */
-	bottom: 0;
-	left: 100%;
-	width: 100%;
-	padding-right: 1rem;
-	padding-left: 1rem;
-	overflow-y: auto;
-	visibility: hidden;
-	background-color: #fcfafb;
-	transition: visibility .3s ease-in-out, -webkit-transform .3s ease-in-out;
-	transition: transform .3s ease-in-out, visibility .3s ease-in-out;
-	transition: transform .3s ease-in-out, visibility .3s ease-in-out, -webkit-transform .3s ease-in-out;
-}
-
-.offcanvas-collapse.open {
-	visibility: visible;
-	-webkit-transform: translateX(-100%);
-	transform: translateX(-100%);
-}
-
-.navbar .navbar-nav {
-	margin-top: 0.75rem;
-	margin-bottom: 0.5rem;
-}
-
-.navbar .nav-item .nav-link {
-	padding-top: 0.625rem;
-	padding-bottom: 0.625rem;
-	color: #5e6576;
-	text-decoration: none;
-	transition: all 0.2s ease;
-}
-
-.navbar .nav-item.dropdown.show .nav-link,
-.navbar .nav-item .nav-link:hover,
-.navbar .nav-item .nav-link.active {
-	color: #B6594C;
-}
-
-/* Dropdown Menu */
-.navbar .dropdown .dropdown-menu {
-	animation: fadeDropdown 0.2s; /* required for the fade animation */
-}
-
-@keyframes fadeDropdown {
-    0% {
-        opacity: 0;
-    }
-
-    100% {
-        opacity: 1;
-	}
-}
-
-.navbar .dropdown-menu {
-	margin-top: 0.25rem;
-	margin-bottom: 0.25rem;
-	border: none;
-	background-color: #fcfafb;
-}
-
-.navbar .dropdown-item {
-	padding-top: 0.625rem;
-	padding-bottom: 0.625rem;
-	color: #5e6576;
-	font-weight: 600;
-	font-size: 0.875rem;
-	line-height: 0.875rem;
-	text-decoration: none;
-}
-
-.navbar .dropdown-item:hover {
-	background-color: #fcfafb;
-	color: #0092ff;
-}
-
-.navbar .dropdown-divider {
-	width: 100%;
-	height: 1px;
-	margin: 0.5rem auto 0.5rem auto;
-	border: none;
-	background-color: #d1d1d1;
-}
-/* end of dropdown menu */
-
-.navbar .navbar-toggler {
-	padding: 0;
-	border: none;
-	font-size: 1.25rem;
 }
 
 
@@ -1197,20 +1060,6 @@ a:hover {
 /*************************/	
 /* Min-width 768px */
 @media (min-width: 768px) {
-
-	/* Header */
-	.header {
-		padding-top: 9rem;
-		padding-bottom: 5em;
-	}
-
-	.header .h1-large {
-		font-size: 3.25rem;
-		line-height: 3.75rem;
-	}
-	/* end of header */
-
-
 	/* Statistics */
 	.counter .counter-cell {
 		display: inline-block;
@@ -1247,22 +1096,6 @@ a:hover {
 	}
 	/* end of general styles */
 
-
-	/* Navigation */
-	.navbar {
-		padding-top: 1.75rem;
-		background-color: #fcfafb;
-		box-shadow: none;
-		transition: all 0.2s;
-	}
-
-	.navbar.top-nav-collapse {
-		padding-top: 0.5rem;
-		padding-bottom: 0.5rem;
-		background-color: #fcfafb;
-		box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.05);
-	}
-
 	.offcanvas-collapse {
 		position: static;
 		top: auto;
@@ -1280,33 +1113,6 @@ a:hover {
 		-webkit-transform: none;
 		transform: none;
 	}
-
-	.navbar .navbar-nav {
-		margin-top: 0;
-		margin-bottom: 0;
-	}
-	
-	.navbar .nav-item .nav-link {
-		padding-right: 0.75rem;
-		padding-left: 0.75rem;
-	}
-
-	.navbar .dropdown-menu {
-		padding-top: 0.75rem;
-		padding-bottom: 0.75rem;
-		box-shadow: 0 3px 3px 1px rgba(0, 0, 0, 0.08);
-	}
-
-	.navbar .dropdown-divider {
-		width: 90%;
-	}
-
-	.navbar .nav-item .btn-solid-sm {
-		margin-top: 0;
-		margin-left: 1rem;
-	}
-	/* end of navigation */
-
 
 	/* Header */
 	.header {
