@@ -21,6 +21,7 @@
   <br/>
   <hr/>
   <Extra/>
+  <Footer />
 </template>
 
 <script>
@@ -30,6 +31,7 @@ import Slide from '@/components/Slide.vue';
 import Header from '@/components/Header.vue';
 import Categories from '@/components/Categories.vue'
 import Extra from '@/components/Extra.vue';
+import Footer from '@/components/Footer.vue'
 
 export default {
   name: 'HomeView',
@@ -38,7 +40,8 @@ export default {
     Carousel,
     Slide,
     Categories,
-    Extra
+    Extra,
+    Footer
   },
   setup() {
     const carouselSlides = ["photo1", "photo2", "photo3", "photo4", "photo5"];
