@@ -1,4 +1,5 @@
 <template>
+  <Header />
   <div class="home">
     <Carousel
       :navigation="true"
@@ -15,20 +16,29 @@
       </Slide>
     </Carousel>
   </div>
-  <Footer />
+  <br/> <br />
+  <Categories />
+  <br/>
+  <hr/>
+  <Extra/>
 </template>
 
 <script>
 // @ is an alias to /src
 import Carousel from '@/components/Carousel.vue';
 import Slide from '@/components/Slide.vue';
-import Footer from '@/components/Footer.vue';
+import Header from '@/components/Header.vue';
+import Categories from '@/components/Categories.vue'
+import Extra from '@/components/Extra.vue';
+
 export default {
   name: 'HomeView',
   components:{
+    Header,
     Carousel,
     Slide,
-    Footer
+    Categories,
+    Extra
   },
   setup() {
     const carouselSlides = ["photo1", "photo2", "photo3", "photo4", "photo5"];
