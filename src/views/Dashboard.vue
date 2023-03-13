@@ -17,7 +17,7 @@
           </li>
           <li>
             <router-link to="/list">
-              <i class="fas fa-cog"></i>
+              <i class="fas fa-chart-bar"></i>
               <span>Shop List</span>
             </router-link>
           </li>
@@ -27,18 +27,13 @@
               <span>Contact List</span>
             </router-link>
           </li>
+          <li>
+            <router-link to="/listFavoriteBooks">
+              <i class="fas fa-chart-bar"></i>
+              <span>Favorite Books</span>
+            </router-link>
+          </li>
         </ul>
-      </div>
-    </div>
-    <div class="main-content" :class="{ 'slide-in': isSidebarActive }">
-      <div class="header">
-        <div class="menu-toggle" @click="toggleSidebar">
-          <i class="fas fa-bars"></i>
-        </div>
-        <h2>Dashboard</h2>
-      </div>
-      <div class="tables">
-        <!-- your tables go here -->
       </div>
     </div>
   </div>
