@@ -1,6 +1,6 @@
 <template>
   <div class="dashboard">
-    <div class="sidebar" :class="{ 'active': isSidebarActive }">
+    <div class="sidebar" :class="{ 'active': isSidebarActive, 'transition': isSidebarTransition }">
       <div class="sidebar-header">
         <h3>Dashboard</h3>
         <div class="close-sidebar" @click="closeSidebar">
@@ -27,13 +27,18 @@
               <span>Contact List</span>
             </router-link>
           </li>
-          <li>
-            <router-link to="/user">
-              <i class="fas fa-users"></i>
-              <span>Users</span>
-            </router-link>
-          </li>
         </ul>
+      </div>
+    </div>
+    <div class="main-content" :class="{ 'slide-in': isSidebarActive }">
+      <div class="header">
+        <div class="menu-toggle" @click="toggleSidebar">
+          <i class="fas fa-bars"></i>
+        </div>
+        <h2>Dashboard</h2>
+      </div>
+      <div class="tables">
+        <!-- your tables go here -->
       </div>
     </div>
   </div>
@@ -141,6 +146,7 @@ export default {
   background-color: #f5f5f5;
   padding: 20px;
   transition: all 0.3s ease-in-out;
+  margin-left: 250px;
 }
 
 .header {
@@ -156,6 +162,26 @@ export default {
 
 .menu-toggle i {
   font-size: 24px;
+}
+
+/* Table styles */
+table {
+  border-collapse: collapse;
+  width: 100%;
+  max-width: 100%;
+  margin-bottom: 1rem;
+  background-color: transparent;
+}
+
+th {
+  vertical-align: bottom;
+  border-bottom: 2px solid #dee2e6;
+  text-align: left;
+}
+
+td {
+  vertical-align: middle;
+  border-bottom: 1px solid #dee2e6;
 }
 
 /* Responsive styles */
@@ -210,5 +236,4 @@ export default {
     font-size: 18px;
   }
 }
-
 </style>
