@@ -7,7 +7,7 @@
         </div>
 
         <div v-for="book in Books" :key="book._id" class="product-details">
-            <!-- <img v-bind:src=" product.img ">  -->
+            <img class="card-img-top" src="../../assets/logo.png"> 
             <h5 class="card-title">{{ book.name }}</h5>
             <h5 class="card-author">{{book.author}}</h5>
             <h5 class="card-price">{{ book.price}}</h5>
