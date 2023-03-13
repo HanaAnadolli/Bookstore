@@ -1,4 +1,5 @@
 <template>
+  <Header />
     <div class="home">
       <ProductDescriptionDrawer 
         :product= "book"
@@ -14,10 +15,11 @@
 </template>
 
 <script>
-import Footer from "@/components/Footer.vue";
 import axios from "axios"; 
 import ProductSummaryCard from '../components/products/ProductSummaryCard.vue'
 import ProductDescriptionDrawer from '../components/products/ProductDescriptionDrawer.vue'
+import Header from '@/components/Header.vue'
+import Footer from '@/components/Footer.vue'
 
 // export default{ 
 //     name:'Shop',
@@ -55,6 +57,7 @@ import ProductDescriptionDrawer from '../components/products/ProductDescriptionD
 export default {
     name:'Shop',
     components:{
+        Header,
         ProductSummaryCard,
         ProductDescriptionDrawer,
         Footer
