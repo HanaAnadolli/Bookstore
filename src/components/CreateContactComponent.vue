@@ -1,4 +1,5 @@
 <template>
+<Header />
    <div class="container">
     <div class="content">
       
@@ -68,6 +69,7 @@
   <script>
   import axios from "axios";
   import FooterVue from "./Footer.vue";
+  import Header from "./Header.vue";
   
   export default {
     data() {
@@ -81,7 +83,8 @@
       };
     },
     components:{
-      FooterVue
+      FooterVue,
+      Header
     },
     methods: {
       handleSubmitForm() {
