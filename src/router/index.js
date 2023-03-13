@@ -16,7 +16,6 @@ const routes = [
     name: 'home',
     component: HomeView
   },
-  
   {
     path: '/blog',
     name: 'Blog',
@@ -26,11 +25,6 @@ const routes = [
     name: 'Info',
     component: AboutUsVue
   },
-
-  
-  
-  
-  
   {
     path: '/shop',
     name: 'Shop',
