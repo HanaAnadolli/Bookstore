@@ -4,11 +4,10 @@ import ShopView from '../views/ShopView.vue'
 import LogIn from '../views/User/Login.vue'
 import SignUp from '../views/User/Signup.vue'
 import Blog from '../views/Blog.vue'
-
 import Dashboard from '../views/Dashboard.vue'
 import { getAuth, onAuthStateChanged } from 'firebase/auth';
-import AboutUsVue from '@/views/AboutUs.vue'
-
+import AboutUs from '@/views/AboutUs.vue'
+import ListFavoriteBookComponent from '@/components/ListFavoriteBookComponent.vue'
 
 const routes = [
   {
@@ -16,14 +15,16 @@ const routes = [
     name: 'home',
     component: HomeView
   },
+  
   {
     path: '/blog',
     name: 'Blog',
     component: Blog
-  }, {
-    path: '/info',
-    name: 'Info',
-    component: AboutUsVue
+  },
+  {
+    path: '/aboutus',
+    name: 'AboutUs',
+    component: AboutUs
   },
   {
     path: '/shop',
@@ -56,11 +57,17 @@ const routes = [
     component: () => import('../components/CreateContactComponent'),
   },
   {
+    path: '/listFavoriteBooks',
+    name: 'ListFavoriteBookComponent',
+    component: ListFavoriteBookComponent,
+  },
+  {
     path: '/dashboard',
     name: 'Dashboard',
     component: Dashboard,
-    meta: {
-      authRequires: true
+    meta: { 
+      requiresAuth: true, 
+      requiresAdmin: true 
     }
   },
   {
@@ -97,4 +104,3 @@ router.beforeEach((to, from, next) => {
 });
 
 export default router
-
